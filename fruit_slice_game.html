@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fruit_slice_game</title>
+    <link rel="stylesheet" href="the_game_style.css">
+
+</head>
+<body>
+    <div id="login">
+      <div id="gameType">
+         <div class="game" ></div>
+         <div class="game" ></div>
+         <div class="game" ></div>
+      </div>
+       <a id="play"href="">play</a>
+    </div>
+        <script type="text/javascript">
+         var  link=0;  
+         var Game=document.querySelectorAll('.game');
+         var Play=document.getElementById("play");
+        Game[0].onclick=function(){
+         Game[0].setAttribute("id","g1");
+         Game[1].removeAttribute("id");
+         Game[2].removeAttribute("id");
+         Game[1].removeAttribute("style");
+
+         link=1;
+       }
+       Game[1].onclick=function(){
+        Game[1].setAttribute("id","g2");
+        Game[0].removeAttribute("id");
+        Game[2].removeAttribute("id");
+        Game[1].setAttribute("style"," z-index: 2;");
+        link=2;
+       }
+       Game[2].onclick=function(){
+        Game[2].setAttribute("id","g3");
+        Game[0].removeAttribute("id");
+        Game[1].removeAttribute("id");
+        Game[1].removeAttribute("style");
+        link=3;
+       }
+      
+       Play.onclick=function(){
+        if (link!=0) 
+              Play.setAttribute("href","game"+link+".html");
+              
+       }
+    </script>
+</body>
+</html>

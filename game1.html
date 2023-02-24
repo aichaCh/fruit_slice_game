@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game1</title>
+    <script src="jquery-3.6.3.min.js"></script>
+    <script src="script1.js"></script>
+   <style>
+    *{
+        padding: 0;
+        margin: 0;
+        
+
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        background-color:#bcbc3745;
+
+    }
+    #canvas{
+        position:relative;
+        border: 3px solid black;
+        width: 55%;
+        max-width: 550px;
+        height: 99vh;
+        overflow: hidden;
+        background-image: url(images/images.jpg) ;
+        background-size: cover;
+    }
+    /* div:hover{
+         cursor: none; //we need to change the cursor to something clear because it's small
+    } */
+    .fruit{
+        position:absolute ;
+        width: 15%;
+        min-width:70px ;
+        bottom:-200px;
+        /* left: 50%; */
+    }
+    h5{
+       position: absolute;
+       z-index: 2;
+       font-size: 30px;
+       color: rgb(217, 11, 11);
+       /* margin-left: 5%; */
+       margin-top: 20px;
+       width: 100px;
+      
+    }
+ #sliced{
+     background-color: blue; /*I used that just to show that the function works */
+ }
+ #message{
+    width: 500px;
+    height: 150px;
+    background-color: rgba(135, 146, 37, 0.733);
+    box-shadow: -4px 0px 20px 0px rgba(1, 1, 1, 0.644);
+    border: 1px solid black;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    top:40% ;
+    border-radius: 8px;
+    z-index:2 ;
+ }
+ #message span{
+     font-size: 30px;
+     color: rgb(28, 27, 27);
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+ }
+ #message input{
+     width: 70px;
+     height: 40px;
+     font-size: large;
+     border-radius: 7px;
+     background-color: beige;
+ }
+ #message input:hover{
+    background-color:rgb(0, 255, 38) ;
+ }
+ /* @media  (min-width:800px) { 
+    #canvas{
+        width: 75%;
+        max-width: 550px;
+        height: 99vh;
+    }
+ }  */
+   </style>
+</head>
+<body>
+    <h5>
+     <span id="score" style="position: fixed;">Score</span>
+     <span id="val" style="margin-left:13vmax; margin-left: 80px;">0</span> 
+     <span id="curser"></span>
+    </h5>
+    <div id="message">
+        <span>Start the game</span>
+        <input type="button" value="Start">
+    </div>
+    <div id="canvas" >    
+         <!-- <img src='images/fruit1.png'  class='fruit' style="left:100px; bottom: 100px;"> -->
+    </div>
+
+
+</body>
+</html>
