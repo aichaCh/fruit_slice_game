@@ -1,7 +1,7 @@
 $(document).ready(function() {
   let gravity=1000; //the time needed for the fruit to be down
   let force=900;  //the time needed for the fruit to be up
-  var gameState='start';
+  var gameState='play';
   var canvas=document.getElementById("canvas");
   let winY=canvas.scrollHeight; 
   var i=0; 
@@ -41,10 +41,19 @@ $(document).ready(function() {
       })
         
 
-        setTimeout(() => {
+$("#button").click(function (){
+ gameState='stop';
+ $("#canvas").empty();
+ $("#message").show();
+
+}) 
+
+
+setTimeout(() => {
+    if (gameState=='play') {   
           requestAnimationFrame(fruit);
-        }, speed);
-        // console.log(speed)
+    }
+  }, speed);
        
 }
     // start the game
