@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game1</title>
+    <title>level1</title>
     <script src="jquery-3.6.3.min.js"></script>
     <script src="script1.js"></script>
+    <script >
+      setUp(1,2,3) // Setup(curent_Level, game_Time, num_FruitsNeedToWin)
+    </script>     
+
+
    <style>
     *{
         padding: 0;
         margin: 0;
-        
-
     }
     body{
         display: flex;
@@ -42,6 +45,7 @@
     }
     h5{
        position: absolute;
+       left: 0;
        z-index: 2;
        font-size: 30px;
        color: rgb(217, 11, 11);
@@ -50,11 +54,13 @@
        width: 100px;
       
     }
- #sliced{
-     background-color: blue; /*I used that just to show that the function works */
- }
+  /* #sliced{
+     background-color: blue; 
+     // I used that just to show that the function works 
+ }  */
  #message{
-    width: 500px;
+    width: 90%;
+    max-width: 570px;
     height: 150px;
     background-color: rgba(135, 146, 37, 0.733);
     box-shadow: -4px 0px 20px 0px rgba(1, 1, 1, 0.644);
@@ -73,16 +79,37 @@
      color: rgb(28, 27, 27);
      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
  }
- #message input{
+ #message #input{
      width: 70px;
      height: 40px;
      font-size: large;
      border-radius: 7px;
      background-color: beige;
  }
- #message input:hover{
+ #message #input:hover{
     background-color:rgb(0, 255, 38) ;
  }
+ #input a{
+    text-decoration: none;
+ }
+ #input a:focus-within{
+    color: rgb(0, 106, 255);
+ }
+#progress,#progress2{
+    position: absolute;
+    z-index: 2;
+    margin-top: 16px;
+    max-width: 350px;
+    width: 40%;
+    height: 30px;
+    overflow: hidden;
+    background-color: rgb(62, 71, 71);
+    border-radius: 50px;
+}
+#progress2{
+    background-color: rgb(55, 197, 27);
+    margin-top: 0px;
+}
  /* @media  (min-width:800px) { 
     #canvas{
         width: 75%;
@@ -91,21 +118,25 @@
     }
  }  */
    </style>
+
 </head>
 <body>
     <h5>
      <span id="score" style="position: fixed;">Score</span>
      <span id="val" style="margin-left:13vmax; margin-left: 80px;">0</span> 
+     <span id="timer"></span>
      <span id="curser"></span>
     </h5>
+    <div id="progress">
+        <div id="progress2"></div>
+    </div>
     <div id="message">
         <span>Start the game</span>
-        <input type="button" value="Start">
+        <button id="input">Start</button>
     </div>
-    <div id="canvas" >    
-         <!-- <img src='images/fruit1.png'  class='fruit' style="left:100px; bottom: 100px;"> -->
-    </div>
-<button id="button">Stop</button>
+    <div id="canvas" ></div>    
+    
+    <button id="button">Stop</button>
 
 </body>
 </html>
